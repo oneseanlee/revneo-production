@@ -89,19 +89,20 @@
 	--input:
 		oklch(0.922 0 0);
 	--ring:
-		oklch(0.708 0 0);
-	--build-accent-color: #ff3d00;
-	--build-chat-colors-bg-1: #e7e7e7;
-	--build-chat-colors-bg-2: #f6f6f6;
-	--build-chat-colors-bg-3: #fbfbfc;
+		#6a7dff;
+	--brand-gradient: linear-gradient(120deg, #52a2ff, #a86aff);
+	--build-accent-color: #6f7bff;
+	--build-chat-colors-bg-1: #f0f3ff;
+	--build-chat-colors-bg-2: #f7f8ff;
+	--build-chat-colors-bg-3: #fbfbff;
 	--build-chat-colors-bg-4: #ffffff;
-	--build-chat-colors-border-primary: #e5e5e5;
-	--build-chat-colors-border-secondary: #eeeeee;
-	--build-chat-colors-border-tertiary: #eeeeee;
+	--build-chat-colors-border-primary: #dfe5ff;
+	--build-chat-colors-border-secondary: #e8ecff;
+	--build-chat-colors-border-tertiary: #e8ecff;
 	--build-chat-colors-danger: #950000cc;
-	--build-chat-colors-brand-heavy: #f6821f;
-	--build-chat-colors-brand-primary: #f6821f;
-	--build-chat-colors-brand-subtle: #f6821f;
+	--build-chat-colors-brand-heavy: #4d8dff;
+	--build-chat-colors-brand-primary: #6f7bff;
+	--build-chat-colors-brand-subtle: #b7b8ff;
 	--build-chat-colors-text-inverted: #ffffff;
 	--build-chat-colors-text-primary: #0a0a0a;
 	--build-chat-colors-text-secondary: #171717;
@@ -116,17 +117,17 @@
 	--input:
 		#292929; /* Input background */
 
-	--build-chat-colors-bg-1: #151515;
-	--build-chat-colors-bg-2: #1f2020;
-	--build-chat-colors-bg-3: #292929;
-	--build-chat-colors-bg-4: #3c3c3c;
-	--build-chat-colors-border-primary: #393939;
-	--build-chat-colors-border-secondary: #454746;
-	--build-chat-colors-border-tertiary: #454746;
-	--build-chat-colors-brand-heavy: #f6821f;
-	--build-chat-colors-brand-primary: #f6821f;
-	--build-chat-colors-brand-subtle: #f6821f;
-	--build-chat-colors-text-inverted: #000000;
+	--build-chat-colors-bg-1: #050509;
+	--build-chat-colors-bg-2: #0b0c18;
+	--build-chat-colors-bg-3: #13142b;
+	--build-chat-colors-bg-4: #1e2140;
+	--build-chat-colors-border-primary: #202245;
+	--build-chat-colors-border-secondary: #2b2d54;
+	--build-chat-colors-border-tertiary: #2b2d54;
+	--build-chat-colors-brand-heavy: #6a93ff;
+	--build-chat-colors-brand-primary: #8b6dff;
+	--build-chat-colors-brand-subtle: #b58bff;
+	--build-chat-colors-text-inverted: #04040b;
 	--build-chat-colors-text-primary: #ffffff;
 	--build-chat-colors-text-secondary: #cdcaca;
 	--build-chat-colors-text-tertiary: #bcb9b9;

@@ -92,6 +92,8 @@ export class SecretsService extends BaseService {
     private async deriveKey(password: string, salt: Uint8Array): Promise<Uint8Array> {
         const encoder = new TextEncoder();
         const passwordBuffer = encoder.encode(password);
+        const saltCopy = new Uint8Array(salt);
+        const saltBuffer = saltCopy.buffer;
         
         // Import password as key material
         const keyMaterial = await crypto.subtle.importKey(
@@ -106,7 +108,7 @@ export class SecretsService extends BaseService {
         const derivedBits = await crypto.subtle.deriveBits(
             {
                 name: 'PBKDF2',
-                salt: salt,
+                salt: saltBuffer,
                 iterations: 100000, // OWASP recommended minimum
                 hash: 'SHA-256'
             },

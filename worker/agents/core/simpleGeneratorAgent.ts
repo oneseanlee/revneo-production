@@ -88,6 +88,10 @@ interface Operations {
  * - Deployment to sandbox service
  */
 export class SimpleCodeGeneratorAgent extends Agent<Env, CodeGenState> {
+    // Provided by the Durable Object runtime; defined explicitly for TS (types widened to satisfy base Agent)
+    declare env: any;
+    declare ctx: any;
+
     protected projectSetupAssistant: ProjectSetupAssistant | undefined;
     protected sandboxServiceClient: BaseSandboxService | undefined;
     protected fileManager: FileManager = new FileManager(
@@ -1330,7 +1334,8 @@ export class SimpleCodeGeneratorAgent extends Agent<Env, CodeGenState> {
     }
 
     getWebSockets(): WebSocket[] {
-        return this.ctx.getWebSockets();
+        const getter = (this.ctx as { getWebSockets?: () => WebSocket[] })?.getWebSockets;
+        return typeof getter === 'function' ? getter.call(this.ctx) : [];
     }
 
     async fetchRuntimeErrors(clear: boolean = true) {
@@ -2445,7 +2450,8 @@ export class SimpleCodeGeneratorAgent extends Agent<Env, CodeGenState> {
     private async uploadScreenshotToCloudflareImages(base64: string, filename: string): Promise<string> {
         const url = `https://api.cloudflare.com/client/v4/accounts/${this.env.CLOUDFLARE_ACCOUNT_ID}/images/v1`;
         const bytes = this.base64ToUint8Array(base64);
-        const blob = new Blob([bytes], { type: 'image/png' });
+        const copy = new Uint8Array(bytes);
+        const blob = new Blob([copy], { type: 'image/png' });
         const form = new FormData();
         form.append('file', blob, filename);
 

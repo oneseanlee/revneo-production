@@ -24,6 +24,7 @@ import { SecurityError, RateLimitExceededError } from 'shared/types/errors';
 import { executeToolWithDefinition } from '../tools/customTools';
 import { RateLimitType } from 'worker/services/rate-limit/config';
 import { MAX_LLM_MESSAGES, MAX_TOOL_CALLING_DEPTH } from '../constants';
+import type { AIGatewayProviders } from 'cloudflare:ai';
 
 function optimizeInputs(messages: Message[]): Message[] {
     return messages.map((message) => ({
